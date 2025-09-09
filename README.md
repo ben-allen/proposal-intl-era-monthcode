@@ -1,34 +1,34 @@
 # Intl era and monthCode Proposal
 (old name "Intl Temporal Proposal")
 
-To specify necessary details about era, eraYear and monthCode usage with Temporal in internationalization setting (for calendars other than "iso8601").
+This proposal specifies necessary internationalization-related details about era, eraYear and monthCode usage in Temporal when using calendars other than "iso8601"
 
 ## Stage - Stage 2.7
 
-This proposal was [advanced to Stage 2.7 for ECMA402 during the TC39 meeting, July 30 2025](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-30.md#intl-era-and-month-code)
-This proposal was [advanced to Stage 2 for ECMA402 during the TC39 meeting, Feb 1 2023](https://github.com/tc39/notes/blob/main/meetings/2023-01/feb-01.md#intl-era-and-monthcode-for-stage-2)
+* This proposal was [advanced to Stage 2.7 for ECMA402 during the TC39 meeting, July 30 2025](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-30.md#intl-era-and-month-code)
+* This proposal was [advanced to Stage 2 for ECMA402 during the TC39 meeting, Feb 1 2023](https://github.com/tc39/notes/blob/main/meetings/2023-01/feb-01.md#intl-era-and-monthcode-for-stage-2)
 This proposal was [advanced to Stage 1 for ECMA402 during the TC39 meeting, Dec 1 2022](https://github.com/tc39/notes/blob/main/meetings/2022-11/dec-01.md#intl-era-and-monthcode-proposal-for-stage-1).
 
-## Stage 3 Reviwers
-During the Feb 1 2023 TC39 meeting, the following members agree to serve as the Stage 3 Reviewers of this proposal:
+## Stage 3 Reviewers
+During the Feb 1 2023 TC39 meeting, the following members agreed to serve as the Stage 3 Reviewers of this proposal:
 * EAO (Eemeli Aro) from Mozilla
 * SFC (Shane Carr) from Google
 
-## Presentation:
+## Presentations
 * [Intl era and monthCode proposal for Stage 1, TC39 Nov 2022 Meeting, Nov 29-Dec 1, 2022](https://docs.google.com/presentation/d/1hoQUYL_mfdLXMHRsNcG27aJirukuDGsVbqntd_tcR0A)
 * [Intl era and monthCode proposal for Stage 2, TC39 Jan 2023 Meeting, Jan 23-Jan 26, 2023](https://docs.google.com/presentation/d/1TlhwLfCBsH9MjJTZYpQxfGs4jVnsMX0U8X0hi8WSoxc)
 * [Intl era and monthCode proposal for Stage 2.7, TC39 July 2025 Meeting, Jul 28-Jul 31](https://docs.google.com/presentation/d/1dAbacNvhPL_iUJKZNPDbQVyfg8a6-OHUuh2OiftMu1A/edit?slide=id.p#slide=id.p)
 ## References:
 * [Draft Spec](https://tc39.es/proposal-intl-era-monthcode/)
-* [Study of modles of year and era in ICU Calendar](https://docs.google.com/presentation/d/1WFRajsWR2Nh_SPQPzEe7yXpjj-EDvUweUrikNV_jzI4/edit#slide=id.g153d52938b6_0_619)
+* [Study of models of year and era in ICU Calendar](https://docs.google.com/presentation/d/1WFRajsWR2Nh_SPQPzEe7yXpjj-EDvUweUrikNV_jzI4/edit#slide=id.g153d52938b6_0_619)
 * [Temporal Internationalization Calendars Design Doc](https://notes.igalia.com/o7MT_yQJTV2Ka06sjyuJ5g#).
 
 ## Scope
-[Temporal proposal](https://tc39.es/proposal-temporal/) is a ECMA262 Stage proposal to “provide standard objects and functions for working with dates and times.” The Temporal proposal specification text clearly specified how the “iso8601” Calendar and “UTC” TimeZone should behave as well as define name and some basic aspect of Calenders other than “iso8601” and TimeZone other than “UTC”. However, there are additional requirements needed for implementation purposes. This proposal aims to define these details which should be eventually merged into ECMA402 specification.
+[Temporal proposal](https://tc39.es/proposal-temporal/) is a ECMA262 proposal to “provide standard objects and functions for working with dates and times.” The Temporal proposal specification text clearly specifies how the “iso8601” Calendar and “UTC” TimeZone should behave, It also defines the names and some basic aspects of Calendars other than “iso8601” and TimeZones other than “UTC”. However, there are additional requirements needed for implementation purposes. This proposal aims to define these details which should be eventually merged into the ECMA402 specification.
 
 
 ### Abstract Operations in Temporal proposal to be specified
-We believe the following Abstract Opertaions defined in the [Temporal proposal](https://tc39.es/proposal-temporal) need to be defined in more details in this proposal:
+We believe the following Abstract Operations defined in the [Temporal proposal](https://tc39.es/proposal-temporal) need to be defined in more details in this proposal:
 * [15.6.1.3 CalendarDateToISO ( calendar, fields, overflow )](https://tc39.es/proposal-temporal/#sec-temporal-calendardatetoiso)
   * Need to specify the condition of throwing RangeError exception
 * [15.6.1.4 CalendarDateAddition ( calendar, date, duration, overflow )](https://tc39.es/proposal-temporal/#sec-temporal-calendardateaddition)
@@ -48,7 +48,7 @@ We believe the following Abstract Opertaions defined in the [Temporal proposal](
 * [15.6.1.21 CalendarDateMergeFields ( calendar, fields, additionalFields )]()
   * Need to define which calendar will merge "era" and "eraYear" and how it merge "era" and "eraYear" .
 
-We may choose to specify certain calendar arithmetic for some calendars if they are very simple to conver from/to "iso8601" calendar- For example, for "gregory", "roc", "buddhist", "japanese" calendar, but leave the arithmetic in vague language for others.
+We may choose to specify certain calendar arithmetic for some calendars if they are very simple to convert from/to "iso8601" calendar. Examples include the "gregory", "roc", "buddhist", and "japanese" calendars, but leave the arithmetic in vague language for others.
 
 We are NOT aiming to specify the calendar arithmetic for the following part of Temporal proposal:
 * 15.6.1.8 CalendarDateYear ( calendar, date )
