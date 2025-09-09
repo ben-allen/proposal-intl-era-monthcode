@@ -3,9 +3,11 @@
 
 To specify necessary details about era, eraYear and monthCode usage with Temporal in internationalization setting (for calendars other than "iso8601").
 
-## Stage - Stage 2
-This proposal is advanced to Stage 2 for ECMA402 during the TC39 meeting, Feb 1 2023. (Link to be added after the meeting notes is approved by TC39 in March)
-This proposal is [advanced to Stage 1 for ECMA402 during the TC39 meeting, Dec 1 2022](https://github.com/tc39/notes/blob/main/meetings/2022-11/dec-01.md#intl-era-and-monthcode-proposal-for-stage-1).
+## Stage - Stage 2.7
+
+This proposal was [advanced to Stage 2.7 for ECMA402 during the TC39 meeting, July 30 2025](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-30.md#intl-era-and-month-code)
+This proposal was [advanced to Stage 2 for ECMA402 during the TC39 meeting, Feb 1 2023](https://github.com/tc39/notes/blob/main/meetings/2023-01/feb-01.md#intl-era-and-monthcode-for-stage-2)
+This proposal was [advanced to Stage 1 for ECMA402 during the TC39 meeting, Dec 1 2022](https://github.com/tc39/notes/blob/main/meetings/2022-11/dec-01.md#intl-era-and-monthcode-proposal-for-stage-1).
 
 ## Stage 3 Reviwers
 During the Feb 1 2023 TC39 meeting, the following members agree to serve as the Stage 3 Reviewers of this proposal:
@@ -92,11 +94,11 @@ CLDR and ICU support the following calendars beside "iso8601" and currently supp
   * "islamic-civil"
 
 * Requirement for era and eraYear:
-  * The combination of *era* and *eraYear* in a calendar need to be able to uniquely identify a particular year in the timeline.
-  * *era* need to be a String (per [15.6.1.1 CalendarEra](https://tc39.es/proposal-temporal/#sec-temporal-calendarera) in Temporal).
-  * *eraYear* need to be an Integer (per [15.6.1.2 CalendarEraYear](https://tc39.es/proposal-temporal/#sec-temporal-calendarerayear) in Temporal).
+  * The combination of *era* and *eraYear* in a calendar needs to be able to uniquely identify a particular year in the timeline.
+  * *era* needs to be a String (per [15.6.1.1 CalendarEra](https://tc39.es/proposal-temporal/#sec-temporal-calendarera) in Temporal).
+  * *eraYear* needs to be an Integer (per [15.6.1.2 CalendarEraYear](https://tc39.es/proposal-temporal/#sec-temporal-calendarerayear) in Temporal).
   * If there is only one era in a calendar, we do not need to and should avoid using the era/eraYear in that calendar (e.g. "hebrew", "persian")
-  * If we define era, we need to also define the behavior if the field(s) is/are absent. (fallback to use year or fallback to a default value and what is the default value)
+  * If we define era, we need to also define the behavior if the field(s) is/are absent. (fallback to use year or fallback to a default value)
   
 * 'gregory': TBW
 ### Values of EraYear for Calendars
